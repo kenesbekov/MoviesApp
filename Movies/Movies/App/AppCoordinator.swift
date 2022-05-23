@@ -16,7 +16,6 @@ class AppCoordinator {
     
     func start() {
         window.rootViewController = ViewController()
-        klj
         window.makeKeyAndVisible()
     }
 }
