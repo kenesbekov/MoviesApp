@@ -15,7 +15,8 @@ class AppCoordinator {
     }
     
     func start() {
-        window.rootViewController = ViewController()
+        let navigationController = UINavigationController(rootViewController: MoviesViewController())
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
 }
