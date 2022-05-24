@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Movies
 //
-//  Created by Abi on 23.05.2022.
+//  Created by Abdurahim on 23.05.2022.
 //
 
 import UIKit
