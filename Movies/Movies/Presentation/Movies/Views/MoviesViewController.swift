@@ -55,11 +55,11 @@ extension MoviesViewController: UISearchBarDelegate {
 
 extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return MovieList.movies.count
+        return MovieListModel.movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let movie = MovieList.movies[indexPath.row]
+        let movie = MovieListModel.movies[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.typeName, for: indexPath) as! MovieCell
         

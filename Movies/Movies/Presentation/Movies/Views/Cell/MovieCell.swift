@@ -31,19 +31,19 @@ final class MovieCell: UITableViewCell {
         return label
     }()
     
-    public func setMovie(movie: Movie) {
+    public func setMovie(movie: MovieModel) {
         movieImageView.image = movie.image
         movieTitleLabel.text = movie.title
         movieReleaseDateLabel.text = movie.releaseDate
     }
     
-    public func getMovieFromCell() -> Movie {
-        var movie = Movie(image: UIImage(), title: String(), releaseDate: String())
+    public func getMovieFromCell() -> MovieModel {
+        var movie = MovieModel(image: UIImage(), title: String(), releaseDate: String())
         
         if let movieImage = movieImageView.image,
            let movieTitle = movieTitleLabel.text,
            let movieReleaseDate = movieReleaseDateLabel.text {
-            movie = Movie(image: movieImage, title: movieTitle, releaseDate: movieReleaseDate)
+            movie = MovieModel(image: movieImage, title: movieTitle, releaseDate: movieReleaseDate)
             
         }
         
