@@ -9,11 +9,10 @@ import UIKit
 import SnapKit
 
 final class MoviesViewController: UIViewController {
-    private lazy var mainBackgroundColor = UIColor(red: 16/255, green: 16/255, blue: 17/255, alpha: 1)
     private lazy var searchController = UISearchController()
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = mainBackgroundColor
+        tableView.backgroundColor = AppColors.mainBackgroundColor
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(MovieCell.self, forCellReuseIdentifier: MovieCell.typeName)
@@ -28,7 +27,7 @@ final class MoviesViewController: UIViewController {
     
     private func setupNavigation() {
         navigationItem.title = "Movies"
-        navigationController?.navigationBar.barTintColor = mainBackgroundColor
+        navigationController?.navigationBar.barTintColor = AppColors.mainBackgroundColor
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -37,7 +36,7 @@ final class MoviesViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = mainBackgroundColor
+        view.backgroundColor = AppColors.mainBackgroundColor
         view.addSubview(tableView)
         tableView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)

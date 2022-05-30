@@ -8,15 +8,12 @@
 import UIKit
 
 final class MovieDetailViewController: UIViewController {
-    private lazy var detailBackgroundColor = UIColor(red: 26/255, green: 27/255, blue: 28/255, alpha: 1)
-    private lazy var screenWidth = UIScreen.main.bounds.size.width
-    
     let scrollView = UIScrollView()
     let movieDetailView = MovieDetailView(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = detailBackgroundColor
+        view.backgroundColor = AppColors.detailBackgroundColor
         setupViews()
     }
     

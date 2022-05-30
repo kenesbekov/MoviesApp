@@ -9,10 +9,6 @@ import UIKit
 import SnapKit
 
 final class MovieDetailView: UIView {
-    private lazy var detailBackgroundColor = UIColor(red: 26/255, green: 27/255, blue: 28/255, alpha: 1)
-    private lazy var screenWidth = UIScreen.main.bounds.size.width
-    private lazy var screenHeight = UIScreen.main.bounds.size.height
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -52,7 +48,7 @@ final class MovieDetailView: UIView {
     }
     
     public func setupViews() {
-        self.backgroundColor = detailBackgroundColor
+        self.backgroundColor = AppColors.detailBackgroundColor
         self.addSubview(movieImageView)
         self.addSubview(movieTitleLabel)
         self.addSubview(movieReleaseDateLabel)
@@ -64,8 +60,8 @@ final class MovieDetailView: UIView {
         movieImageView.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(25)
             $0.top.equalTo(self.safeAreaLayoutGuide).offset(-30)
-            $0.height.equalTo((screenWidth-50)*1.4)
-            $0.width.equalTo(screenWidth-50)
+            $0.height.equalTo((ScreenSize.screenWidth-50)*1.4)
+            $0.width.equalTo(ScreenSize.screenWidth-50)
         }
         
         movieTitleLabel.snp.makeConstraints {
