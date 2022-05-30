@@ -9,12 +9,12 @@ import UIKit
 
 final class MovieCell: UITableViewCell {
     private lazy var movieImageView: UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true
-        image.layer.masksToBounds = true
-        image.layer.cornerRadius = 5
-        return image
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = 5
+        return imageView
     }()
     
     private lazy var movieTitleLabel: UILabel = {
@@ -35,6 +35,19 @@ final class MovieCell: UITableViewCell {
         movieImageView.image = movie.image
         movieTitleLabel.text = movie.title
         movieReleaseDateLabel.text = movie.releaseDate
+    }
+    
+    public func getMovieFromCell() -> Movie {
+        var movie = Movie(image: UIImage(), title: String(), releaseDate: String())
+        
+        if let movieImage = movieImageView.image,
+           let movieTitle = movieTitleLabel.text,
+           let movieReleaseDate = movieReleaseDateLabel.text {
+            movie = Movie(image: movieImage, title: movieTitle, releaseDate: movieReleaseDate)
+            
+        }
+        
+        return movie
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
