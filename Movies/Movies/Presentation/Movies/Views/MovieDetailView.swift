@@ -41,7 +41,7 @@ final class MovieDetailView: UIView {
         return label
     }()
     
-    public func setMovie(movie: Movie) {
+    public func setMovie(movie: MovieModel) {
         movieImageView.image = movie.image
         movieTitleLabel.text = movie.title
         movieReleaseDateLabel.text = movie.releaseDate
