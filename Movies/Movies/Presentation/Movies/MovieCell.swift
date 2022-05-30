@@ -38,11 +38,14 @@ final class MovieCell: UITableViewCell {
     }
     
     public func getMovieFromCell() -> Movie {
-        let movie = Movie(
-            image: movieImageView.image!,
-            title: movieTitleLabel.text!,
-            releaseDate: movieReleaseDateLabel.text!
-        )
+        var movie = Movie(image: UIImage(), title: String(), releaseDate: String())
+        
+        if let movieImage = movieImageView.image,
+           let movieTitle = movieTitleLabel.text,
+           let movieReleaseDate = movieReleaseDateLabel.text {
+            movie = Movie(image: movieImage, title: movieTitle, releaseDate: movieReleaseDate)
+            
+        }
         
         return movie
     }
