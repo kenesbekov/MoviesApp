@@ -41,6 +41,18 @@ final class MovieDetailView: UIView {
         return label
     }()
     
+    private lazy var movieActionButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = AppColors.detailBackgroundColor
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.darkGray.cgColor
+        button.setTitle("Action", for: .normal)
+        button.titleLabel!.font = UIFont.boldSystemFont(ofSize: 15)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 15
+        return button
+    }()
+    
     public func setMovie(movie: MovieModel) {
         movieImageView.image = movie.image
         movieTitleLabel.text = movie.title
@@ -52,6 +64,7 @@ final class MovieDetailView: UIView {
         self.addSubview(movieImageView)
         self.addSubview(movieTitleLabel)
         self.addSubview(movieReleaseDateLabel)
+        self.addSubview(movieActionButton)
         
         setupContraints()
     }
@@ -72,6 +85,13 @@ final class MovieDetailView: UIView {
         movieReleaseDateLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(25)
             $0.top.equalTo(movieTitleLabel.snp.bottom)
+        }
+        
+        movieActionButton.snp.makeConstraints {
+            $0.leading.equalToSuperview().offset(25)
+            $0.top.equalTo(movieReleaseDateLabel.snp.bottom).offset(20)
+            $0.height.equalTo(ScreenSize.screenWidth/13)
+            $0.width.equalTo(ScreenSize.screenWidth-50)
         }
     }
 }
