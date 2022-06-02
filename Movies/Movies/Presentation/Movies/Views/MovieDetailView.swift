@@ -45,14 +45,16 @@ final class MovieDetailView: UIView {
     
     private lazy var movieActionButton: UIButton = {
         let button = UIButton()
+        
         button.backgroundColor = AppColors.detailBackgroundColor
+        
+        button.layer.cornerRadius = 15
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.darkGray.cgColor
+        
         button.setTitle("Action", for: .normal)
-        button.titleLabel!.font = UIFont.boldSystemFont(ofSize: 15)
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        button.titleLabel!.font = UIFont.boldSystemFont(ofSize: 15)
         return button
     }()
     
@@ -62,8 +64,9 @@ final class MovieDetailView: UIView {
         movieReleaseDateLabel.text = movie.releaseDate
     }
     
-    public func setupViews() {
+    private func setupViews() {
         self.backgroundColor = AppColors.detailBackgroundColor
+        
         self.addSubview(movieImageView)
         self.addSubview(movieTitleLabel)
         self.addSubview(movieReleaseDateLabel)
