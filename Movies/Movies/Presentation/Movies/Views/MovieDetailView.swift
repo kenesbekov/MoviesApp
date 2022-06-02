@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 final class MovieDetailView: UIView {
+    weak var delegate: ButtonDelegate?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -50,6 +52,7 @@ final class MovieDetailView: UIView {
         button.titleLabel!.font = UIFont.boldSystemFont(ofSize: 15)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 15
+        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -93,5 +96,9 @@ final class MovieDetailView: UIView {
             $0.height.equalTo(ScreenSize.screenWidth/13)
             $0.width.equalTo(ScreenSize.screenWidth-50)
         }
+    }
+    
+    @objc func buttonTapped(_ sender: UIButton!) {
+        delegate?.buttonTapped(sender)
     }
 }
