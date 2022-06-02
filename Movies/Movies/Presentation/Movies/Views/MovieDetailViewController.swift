@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MovieDetailViewController: UIViewController {
+final class MovieDetailViewController: UIViewController, ButtonDelegate {
     let scrollView = UIScrollView()
     let movieDetailView = MovieDetailView(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
     
@@ -18,6 +18,8 @@ final class MovieDetailViewController: UIViewController {
     }
     
     private func setupViews(){
+        movieDetailView.delegate = self
+        
         view.addSubview(scrollView)
         scrollView.addSubview(movieDetailView)
         
@@ -35,5 +37,10 @@ final class MovieDetailViewController: UIViewController {
             $0.width.equalTo(scrollView)
             $0.height.equalTo(scrollView)
         }
+    }
+    
+    @objc func buttonTapped(_ sender: UIButton!) {
+        let movieActionlVC = MovieActionViewController()
+        present(movieActionlVC, animated: true)
     }
 }
