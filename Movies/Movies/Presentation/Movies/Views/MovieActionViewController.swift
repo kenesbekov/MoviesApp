@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MovieActionViewController: UIViewController, ActionMovieButtonDelegate {
+final class MovieActionViewController: UIViewController {
     let movieActionView: MovieActionView = {
         let view = MovieActionView(
             frame: CGRect(x: 10,
@@ -25,15 +25,6 @@ final class MovieActionViewController: UIViewController, ActionMovieButtonDelega
     }
     
     private func setupViews(){
-        movieActionView.delegate = self
         view.addSubview(movieActionView)
     }
-}
-
-extension MovieActionViewController {
-    func rateButtonTapped(_ sender: UIButton!) {}
-    
-    func shareButtonTapped(_ sender: UIButton!) {}
-    
-    func cancelButtonTapped(_ sender: UIButton!) {}
 }
