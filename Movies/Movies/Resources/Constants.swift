@@ -33,4 +33,6 @@ struct AppButtonSize {
 struct ScreenSize {
     static let screenWidth = UIScreen.main.bounds.size.width
     static let screenHeight = UIScreen.main.bounds.size.height
+    
+    static let bottomSafeArea = UIApplication.shared.windows.first?.safeAreaInsets.bottom
 }
