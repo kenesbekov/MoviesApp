@@ -32,14 +32,14 @@ final class MovieDetailView: UIView {
     private lazy var movieTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = AppFonts.movieDetailTitleFont
         return label
     }()
     
     private lazy var movieReleaseDateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = AppFonts.movieDetailReleaseDateFont
         return label
     }()
     
@@ -54,7 +54,7 @@ final class MovieDetailView: UIView {
         
         button.setTitle("Action", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel!.font = UIFont.boldSystemFont(ofSize: 15)
+        button.titleLabel!.font = AppFonts.actionTitleFont
         return button
     }()
     

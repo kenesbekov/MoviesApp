@@ -20,14 +20,14 @@ final class MovieCell: UITableViewCell {
     private lazy var movieTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = AppFonts.movieCellTitleFont
         return label
     }()
     
     private lazy var movieReleaseDateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .gray
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.font = AppFonts.movieCellReleaseDateFont
         return label
     }()
     
@@ -60,7 +60,7 @@ final class MovieCell: UITableViewCell {
     }
     
     private func setupViews() {
-        self.contentView.backgroundColor = UIColor(red: 16/255, green: 16/255, blue: 17/255, alpha: 1)
+        self.contentView.backgroundColor = AppColors.mainBackgroundColor
         self.contentView.addSubview(movieImageView)
         self.contentView.addSubview(movieTitleLabel)
         self.contentView.addSubview(movieReleaseDateLabel)
