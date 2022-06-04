@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MovieDetailViewController: UIViewController, ButtonDelegate {
+final class MovieDetailViewController: UIViewController, ActionButtonDelegate {
     let scrollView = UIScrollView()
     let movieDetailView = MovieDetailView(frame: CGRect(x: 0, y: 0, width: 400, height: 50))
     
@@ -38,8 +38,10 @@ final class MovieDetailViewController: UIViewController, ButtonDelegate {
             $0.height.equalTo(scrollView)
         }
     }
-    
-    @objc func buttonTapped(_ sender: UIButton!) {
+}
+
+extension MovieDetailViewController {
+    func actionButtonTapped(_ sender: UIButton!) {
         let movieActionlVC = MovieActionViewController()
         present(movieActionlVC, animated: true)
     }

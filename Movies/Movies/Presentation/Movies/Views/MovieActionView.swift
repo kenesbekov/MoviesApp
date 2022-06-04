@@ -45,7 +45,7 @@ final class MovieActionView: UIView {
     }()
 
     
-    public func setupViews() {
+    private func setupViews() {
         self.backgroundColor = AppColors.actionViewBackgroundColor
         self.addSubview(rateButton)
         self.addSubview(shareButton)

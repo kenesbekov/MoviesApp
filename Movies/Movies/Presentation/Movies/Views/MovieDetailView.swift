@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class MovieDetailView: UIView {
-    weak var delegate: ButtonDelegate?
+    weak var delegate: ActionButtonDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -55,6 +55,9 @@ final class MovieDetailView: UIView {
         button.setTitle("Action", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel!.font = AppFonts.actionTitleFont
+        
+        button.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+        
         return button
     }()
     
@@ -101,7 +104,7 @@ final class MovieDetailView: UIView {
         }
     }
     
-    @objc func buttonTapped(_ sender: UIButton!) {
-        delegate?.buttonTapped(sender)
+    @objc func actionButtonTapped(_ sender: UIButton!) {
+        delegate?.actionButtonTapped(sender)
     }
 }

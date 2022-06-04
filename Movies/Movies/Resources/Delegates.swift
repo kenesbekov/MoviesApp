@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol ButtonDelegate: class {
-    func buttonTapped(_ sender: UIButton!)
+protocol ActionButtonDelegate: class {
+    func actionButtonTapped(_ sender: UIButton!)
 }
