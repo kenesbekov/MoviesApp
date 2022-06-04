@@ -10,3 +10,9 @@ import UIKit
 protocol ActionButtonDelegate: class {
     func actionButtonTapped(_ sender: UIButton!)
 }
+
+protocol ActionMovieButtonDelegate: class {
+    func rateButtonTapped(_ sender: UIButton!)
+    func shareButtonTapped(_ sender: UIButton!)
+    func cancelButtonTapped(_ sender: UIButton!)
+}

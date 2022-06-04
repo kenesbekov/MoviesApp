@@ -67,6 +67,18 @@ final class MovieDetailView: UIView {
         movieReleaseDateLabel.text = movie.releaseDate
     }
     
+    public func getMovieFromDetails() -> MovieModel {
+        var movie = MovieModel(image: UIImage(), title: String(), releaseDate: String())
+        
+        if let movieImage = movieImageView.image,
+           let movieTitle = movieTitleLabel.text,
+           let movieReleaseDate = movieReleaseDateLabel.text {
+            movie = MovieModel(image: movieImage, title: movieTitle, releaseDate: movieReleaseDate)
+        }
+        
+        return movie
+    }
+    
     private func setupViews() {
         self.backgroundColor = AppColors.detailBackgroundColor
         
